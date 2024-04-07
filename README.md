@@ -110,5 +110,4 @@ Distributed under the MIT License. See [LICENSE](https://github.com/cyberlordyas
 ## Acknowledgements
 
 * [CyberlordYash](https://github.com/cyberlordyash)
-* []()
-* []()
+
