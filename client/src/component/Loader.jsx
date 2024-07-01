@@ -4,14 +4,19 @@ const Loader = () => {
   return (
     <>
       <div className="loader-mid-pos">
-        <svg viewBox="25 25 50 50" className="loader-svg">
-          <circle r="20" cy="50" cx="50"></circle>
-        </svg>
-        <div className="loader-mid-text">
-          <p>Please wait..</p>
-          <p className="blink">
-            The server being hosted on a free tier take around 30 sec to respond
-          </p>
+        <div class="container-loader">
+          <div class="loader">
+            <div class="crystal"></div>
+            <div class="crystal"></div>
+            <div class="crystal"></div>
+            <div class="crystal"></div>
+            <div class="crystal"></div>
+            <div class="crystal"></div>
+          </div>
+        </div>
+        <div className="blink">
+          please wait the server beign hosted on free server took aroung 30s to
+          respond
         </div>
       </div>
       <div className="loader-pos">

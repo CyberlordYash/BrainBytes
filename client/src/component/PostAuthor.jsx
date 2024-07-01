@@ -32,6 +32,11 @@ const PostAuthor = ({ authorID, createdAt }) => {
         <img
           src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${author?.avatar}`}
           alt=""
+          onError={(event) => {
+            event.target.src =
+              "https://i.pinimg.com/originals/39/a4/71/39a47159059f38a954d77e5dcae6f0db.jpg";
+            event.onerror = null;
+          }}
         ></img>
       </div>
       <div className="post__author-details">

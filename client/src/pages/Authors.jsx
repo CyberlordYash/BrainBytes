@@ -39,6 +39,11 @@ const Authors = () => {
                   <img
                     src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`}
                     alt={`Image of ${name}`}
+                    onError={(event) => {
+                      event.target.src =
+                        "https://i.pinimg.com/originals/39/a4/71/39a47159059f38a954d77e5dcae6f0db.jpg";
+                      event.onerror = null;
+                    }}
                   ></img>
                 </div>
                 <div className="author__info">

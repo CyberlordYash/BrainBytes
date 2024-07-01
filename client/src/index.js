@@ -18,6 +18,8 @@ import Dashboard from "./pages/Dashboard.jsx";
 import Logout from "./pages/Logout.jsx";
 import DeletePost from "./pages/DeletePost.jsx";
 import UserProvider from "./context/userContext.js";
+import Ai from "./component/Ai.jsx";
+import Fact from "./component/Fact.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -79,6 +81,14 @@ const router = createBrowserRouter([
       {
         path: "logout",
         element: <Logout />,
+      },
+      {
+        path: "ai",
+        element: <Ai />,
+      },
+      {
+        path: "fact",
+        element: <Fact />,
       },
     ],
   },

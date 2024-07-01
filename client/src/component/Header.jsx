@@ -7,7 +7,7 @@ import Profile from "../images/profile.svg";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { UserContext } from "../context/userContext";
-import Heart from "../images/heart.svg";
+import Heart from "../images/github.svg";
 import Users from "../images/users.svg";
 import Menu from "../images/menu.svg";
 import Logo from "../images/notes.svg";

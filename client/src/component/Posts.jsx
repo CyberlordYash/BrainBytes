@@ -16,9 +16,8 @@ const Posts = () => {
       } catch (err) {
         console.log(err);
       }
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 800);
+
+      setIsLoading(false);
     };
     fetchPosts();
   }, []);
