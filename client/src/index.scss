@@ -178,32 +178,13 @@ nav {
   font-family: "Quicksand";
   font-size: 1.3rem;
   width: 10rem;
-  color: transparent;
-  background: linear-gradient(
-    to left,
-    #1e5799,
-    #382ce0,
-    #8a2cdd,
-    #3f00ac,
-    #51007d,
-    #260035
-  );
-  background-size: 1000px 100%;
-  animation: bg 15s linear infinite;
-  background-clip: text;
-  -webkit-background-clip: text;
+  color: black;
 }
-@keyframes bg {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: 10000px;
-  }
-}
+
 //-----------footer design--------------
 footer {
-  background: linear-gradient(to right, #0f172a, #293649);
+  // background: linear-gradient(to right, #0f172a, #293649);
+  background-color: black;
 
   margin: 1rem;
   border-radius: 1rem;
@@ -243,7 +224,8 @@ footer {
   margin: 1rem;
   padding: 2rem 0rem 2rem 0rem;
   border-radius: 1rem;
-  background-image: url("./images/asd.jpg");
+  background-image: url("./images/linebg.svg");
+  border: solid 1px black;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -258,13 +240,19 @@ footer {
   border-radius: 1rem 1rem 0 0;
   overflow: hidden;
   height: 16rem;
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
+  width: 100%; /* Ensures the div takes the full width */
   background-color: rgb(93, 93, 255);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensures the image covers the div, cropping if necessary
+    border-radius: inherit; // Inherits the border-radius from the parent div
+  }
 }
+
 .post__content {
-  background-color: rgba(255, 255, 255, 0.903);
+  background-color: rgb(255, 255, 255);
   color: black;
   padding: 1rem;
   border-radius: 0 0 1rem 1rem;
@@ -305,7 +293,8 @@ footer {
   margin: 1rem;
   margin-top: 5rem;
   background-color: var(--color-white);
-  background: linear-gradient(to right, #7c3aed, #4f46e5);
+  // background: linear-gradient(to right, #7c3aed, #4f46e5);
+  background-color: black;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -331,6 +320,7 @@ footer {
 }
 .post-detail p {
   margin-bottom: 0.7rem;
+  margin: 1rem;
   font-size: 1rem;
 }
 
@@ -659,86 +649,49 @@ textarea {
   justify-content: center;
 }
 
-.loader {
+/* loader */
+#load {
+  animation: spin 1s ease-in-out infinite;
+  border: 2px solid transparent;
+  border-top-color: #537d8b;
+  border-radius: 100%;
+  filter: drop-shadow(0 0 1px blue);
+  height: 64px;
+  width: 64px;
+  margin: 2rem;
   position: relative;
-  width: 200px;
-  height: 200px;
-  perspective: 800px;
 }
-
-.crystal {
+#load div {
+  animation: spin 1s ease-in-out infinite;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  bottom: -1px;
+  left: -1px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 60px;
-  height: 60px;
-  opacity: 0;
-  transform-origin: bottom center;
-  transform: translate(-50%, -50%) rotateX(45deg) rotateZ(0deg);
-  animation: spin 4s linear infinite, emerge 2s ease-in-out infinite alternate,
-    fadeIn 0.3s ease-out forwards;
-  border-radius: 10px;
-  visibility: hidden;
+  right: -1px;
+  top: -1px;
 }
-
+#load div:first-child {
+  border-top-color: #a74040;
+  transform: rotate(120deg);
+}
+#load div:last-child {
+  animation-duration: 2s;
+  border-top-color: #40a744;
+  transform: rotate(240deg);
+}
 @keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotateX(45deg) rotateZ(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotateX(45deg) rotateZ(360deg);
-  }
-}
-
-@keyframes emerge {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) scale(0.5);
-    opacity: 0;
+  0% {
+    transform: rotate(0deg);
   }
   50% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
+    box-shadow: 0 -2px 4px rgba(255, 255, 255, 0.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
-
-@keyframes fadeIn {
-  to {
-    visibility: visible;
-    opacity: 0.8;
-  }
-}
-
-.crystal:nth-child(1) {
-  background: linear-gradient(45deg, #003366, #336699);
-  animation-delay: 0s;
-}
-
-.crystal:nth-child(2) {
-  background: linear-gradient(45deg, #003399, #3366cc);
-  animation-delay: 0.3s;
-}
-
-.crystal:nth-child(3) {
-  background: linear-gradient(45deg, #0066cc, #3399ff);
-  animation-delay: 0.6s;
-}
-
-.crystal:nth-child(4) {
-  background: linear-gradient(45deg, #0099ff, #66ccff);
-  animation-delay: 0.9s;
-}
-
-.crystal:nth-child(5) {
-  background: linear-gradient(45deg, #33ccff, #99ccff);
-  animation-delay: 1.2s;
-}
-
-.crystal:nth-child(6) {
-  background: linear-gradient(45deg, #66ffff, #ccffff);
-  animation-delay: 1.5s;
-}
-
 .blink {
   display: flex;
   align-items: center;
@@ -761,7 +714,7 @@ textarea {
   font-family: "Quicksand";
   font-size: 1.5rem;
   font-weight: 600;
-  color: rgb(215, 227, 255);
+  color: rgb(0, 0, 0);
   padding: 1rem 1rem 0rem 1rem;
   @media screen and (max-width: 800px) {
   }
@@ -799,7 +752,8 @@ textarea {
   justify-content: center;
 
   padding: 1rem;
-  background: linear-gradient(to right, #7c3aed, #4f46e5);
+  // background: linear-gradient(to right, #7c3aed, #4f46e5);
+  background-color: black;
 }
 .greet-bg2 {
   cursor: pointer;
@@ -808,12 +762,13 @@ textarea {
   margin: 1rem;
   margin-right: 0.5rem;
   position: relative;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 1rem;
   justify-content: center;
   width: 50%;
   padding: 1rem;
-  background: linear-gradient(to right, #ec4899, #f43f5e);
+  // background: linear-gradient(to right, #ec4899, #f43f5e);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
 }
 .greet-bg3 {
   cursor: pointer;
@@ -822,15 +777,19 @@ textarea {
   margin: 1rem;
   margin-left: 0.5rem;
   position: relative;
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 1rem;
   justify-content: center;
   width: 50%;
   padding: 1rem;
-  background: linear-gradient(to right, #10b981, #064e3b);
+  // background: linear-gradient(to right, #10b981, #064e3b);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
 }
 .greet-bg2:hover {
-  border: 1px solid red;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+.greet-bg3:hover {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
 .gemini {
   position: absolute;
@@ -839,13 +798,13 @@ textarea {
   opacity: 80%;
 }
 .nav-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 .nav-icon2 {
   margin-left: 5px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 .nav-brain {
   display: flex;
@@ -869,7 +828,8 @@ textarea {
   padding-left: 1rem;
 }
 .login__container {
-  background: linear-gradient(to right, #7c3aed, #4f46e5);
+  // background: linear-gradient(to right, #7c3aed, #4f46e5);
+  background-color: black;
   padding: 1rem;
   border-radius: 1rem;
   color: white;
@@ -893,7 +853,16 @@ textarea {
   border-radius: 1rem;
   padding: 1rem;
   color: white;
-  background: linear-gradient(to right, #ec4899, #f43f5e);
+  // background: linear-gradient(to right, #ec4899, #f43f5e);
+  background-color: black;
+  @media (min-width: 768px) {
+    // Adjust the breakpoint as needed
+
+    margin: 14rem; // Increased padding for larger devices
+
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+  }
 }
 .fact {
   display: flex;
@@ -908,10 +877,11 @@ textarea {
   border-radius: 1rem;
   padding: 1rem;
   color: white;
-  background: linear-gradient(to right, #10b981, #064e3b);
+  // background: linear-gradient(to right, #10b981, #064e3b);
+  background-color: black;
 }
 .response {
-  color: white;
+  color: rgb(0, 0, 0);
   border-radius: 1rem;
   margin: 1rem;
   padding: 1rem;
@@ -919,9 +889,11 @@ textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #6366f1, #3b82f6);
+  // background: linear-gradient(to right, #6366f1, #3b82f6);
+  background-image: url("./images/linebg.svg");
+  border: solid 1px black;
   h3 {
-    color: white;
+    color: rgb(0, 0, 0);
   }
   p {
     padding: 1rem;
@@ -932,7 +904,7 @@ textarea {
 }
 .ai-textarea {
   border-radius: 1rem;
-  background: linear-gradient(to right, #ffc5e2, #ffc8d1);
+  background: linear-gradient(to right, #ffffff, #ffe9ed);
 }
 .btn-ai {
   display: flex;

@@ -5,13 +5,9 @@ const Loader = () => {
     <>
       <div className="loader-mid-pos">
         <div class="container-loader">
-          <div class="loader">
-            <div class="crystal"></div>
-            <div class="crystal"></div>
-            <div class="crystal"></div>
-            <div class="crystal"></div>
-            <div class="crystal"></div>
-            <div class="crystal"></div>
+          <div id="load">
+            <div></div>
+            <div></div>
           </div>
         </div>
         <div className="blink">

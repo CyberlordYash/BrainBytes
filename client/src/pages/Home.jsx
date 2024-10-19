@@ -14,7 +14,7 @@ const Home = () => {
         <h1 className="greet-1">Hi, there! </h1>
         <h1 className="greet-2">Let's explore</h1>
 
-        <p className="greet-3">
+        <p className="greet-4">
           Enhance your notes and blog sharing experience with AI-driven insights
           and seamless collaboration, powered by Gemini.
         </p>

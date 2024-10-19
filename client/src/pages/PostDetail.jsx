@@ -77,7 +77,7 @@ const PostDetail = () => {
               alt=""
               onError={(event) => {
                 event.target.src =
-                  "https://akm-img-a-in.tosshub.com/sites/visualstory/stories/2023_04/story_29467/assets/2.jpeg?time=1680591914";
+                  "https://img.freepik.com/premium-photo/flat-lay-black-gray-tech-gadgets-black-background_14117-686849.jpg";
                 event.onerror = null;
               }}
             ></img>
